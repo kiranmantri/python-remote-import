@@ -16,7 +16,7 @@ setuptools.setup(
     version=importlib.import_module("remote_import.version", "__version__").__version__,
     long_description=open("README.rst").read(),
     packages=[this_package_name],
-    python_requires=">=3.7",
+    python_requires=">=3.10",
     install_requires=[
         line for line in open("requirements.txt").read().split("\n") if not line.startswith("#")
     ],

@@ -187,6 +187,10 @@ class RemoteImporter(MetaPathFinder, LazyLoader):
         extra_args: dict = {},
         test_connection: bool = False,
     ):
+
+        if not isinstance(namespaces, (tuple, list)):
+            raise TypeError(f"parameter 'namespaces' must be a iterable, e.g. ['{namespaces}']")
+
         for namespace in namespaces:
             if test_connection:
                 url = sanitize_url(f"{base_url}/{namespace}")
